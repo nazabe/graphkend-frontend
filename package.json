@@ -13,7 +13,7 @@
     "@types/react-dom": "^19.2.2",
     "@xyflow/react": "^12.8.6",
     "astro": "^5.14.5",
-    "liquidjs": "^10.22.0",
+    "liquidjs": "^10.23.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

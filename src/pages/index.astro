@@ -1,10 +1,18 @@
 ---
 import Flow from "../components/Flow";
 import "../styles/global.css";
+import { Liquid } from "liquidjs";
+
+const engine = new Liquid();
+
+const liquid_template = `<header class="app-header">{{ title }}</header>`;
+const liquid_context = { title: "Graphkend - React Flow Example" };
+
+const html = await engine.parseAndRender(liquid_template, liquid_context);
+
 ---
 
 <html lang="en">
-
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
@@ -15,9 +23,8 @@ import "../styles/global.css";
 
   <body>
     <div class="app">
-      <header class="app-header">Graphkend - React Flow Example</header>
+      <Fragment set:html={html} />
       <Flow client:load />
     </div>
   </body>
-
 </html>
