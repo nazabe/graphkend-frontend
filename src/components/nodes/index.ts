@@ -3,9 +3,7 @@ import PositionLoggerNode, {
   type PositionLoggerNode as PositionLoggerNodeType,
 } from "./PositionLoggerNode";
 
-const URL_GRAPHKEND = "http://127.0.0.1:3001/api/objectEntity/findMany"
-
-const request = new Request(URL_GRAPHKEND, {
+const request = new Request("http://127.0.0.1:3001/api/objectEntity/findMany", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
