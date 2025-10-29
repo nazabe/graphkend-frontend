@@ -2,6 +2,28 @@
 
 // TODO: Render elements as products or something like that i guess
 // TODO: This will be data from graphkend. This can Throw images i think
+
+import { Liquid } from 'liquidjs';
+
+const engine = new Liquid();
+
+const liquid_template = `
+  <html>
+    <head>
+      <title>{title}</title>
+    </head>
+    <body>
+      <h1>{title}</h1>
+      <p>{text}</p>
+    </body>
+  </html>
+`;
+
+const liquid_context = Astro.props;
+// const liquid_context = { title: "Graphkend - React Flow Example" };
+
+const html = await engine.parseAndRender(liquid_template, Astro.props);
+
 export function getStaticPaths() {
   const pages = [
     {
@@ -29,9 +51,11 @@ export function getStaticPaths() {
   });
 }
 
-const { title, text } = Astro.props;
 ---
-<html>
+
+<html set:html={html} />
+
+<!-- <html>
   <head>
     <title>{title}</title>
   </head>
@@ -39,4 +63,4 @@ const { title, text } = Astro.props;
     <h1>{title}</h1>
     <p>{text}</p>
   </body>
-</html>
+</html> -->
