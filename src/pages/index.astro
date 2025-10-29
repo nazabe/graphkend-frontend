@@ -7,6 +7,7 @@ import MyButton from '../components/Button'
 const engine = new Liquid();
 
 const liquid_template = `<header class="app-header">{{ title }}</header>`;
+
 const liquid_context = { title: "Graphkend - React Flow Example" };
 
 const html = await engine.parseAndRender(liquid_template, liquid_context);
