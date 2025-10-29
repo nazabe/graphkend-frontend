@@ -3,7 +3,12 @@ import PositionLoggerNode, {
   type PositionLoggerNode as PositionLoggerNodeType,
 } from "./PositionLoggerNode";
 
-const request = new Request("http://127.0.0.1:3001/api/objectEntity/findMany", {
+// import { loadEnv } from "vite";
+
+// const { SECRET_PASSWORD } = loadEnv(process.env.URL_GRAPHKEND, process.cwd(), "");
+
+
+const request = new Request("http://127.0.0.1:3001/api/objectEntity/findMany", { // TODO: Replace this with process.env
   method: "POST",
   headers: {
     "Content-Type": "application/json"

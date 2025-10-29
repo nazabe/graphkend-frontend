@@ -24,9 +24,11 @@ const html = await engine.parseAndRender(liquid_template, liquid_context);
 
   <body>
     <div class="app">
-      <!-- <Fragment set:html={html} /> -->
-      <!-- <Flow client:load /> -->
-       <MyButton></MyButton>
+      
+      <Fragment set:html={html} />
+      <Flow client:load />
+      <!-- TODO: Dynamic routing for products -->
+      <!-- <MyButton></MyButton> -->
     </div>
   </body>
 </html>

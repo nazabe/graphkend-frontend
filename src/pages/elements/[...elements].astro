@@ -1,0 +1,42 @@
+---
+
+// TODO: Render elements as products or something like that i guess
+// TODO: This will be data from graphkend. This can Throw images i think
+export function getStaticPaths() {
+  const pages = [
+    {
+      elements: undefined,
+      title: "e1",
+      text: "Welcome to the Astro store!",
+    },
+    {
+      elements: "e2",
+      title: "Astro products",
+      text: "We have lots of products for you",
+    },
+    {
+      elements: "e3/path",
+      title: "The ultimate Astro handbook",
+      text: "If you want to learn Astro, you must read this book.",
+    },
+  ];
+
+  return pages.map(({ elements, title, text }) => {
+    return {
+      params: { elements },
+      props: { title, text },
+    };
+  });
+}
+
+const { title, text } = Astro.props;
+---
+<html>
+  <head>
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>{title}</h1>
+    <p>{text}</p>
+  </body>
+</html>
